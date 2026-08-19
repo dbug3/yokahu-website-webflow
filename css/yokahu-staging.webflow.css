@@ -3124,9 +3124,13 @@ li {
   overflow: hidden;
 }
 
+/* Per-card background: set background-image inline on .eco-card-bg-1 in the HTML,
+   e.g. style="background-image: url('images/abstract-green.webp')".
+   Paths in the style attribute are relative to the page, not to this stylesheet. */
 .eco-card-bg-1 {
-  opacity: .3;
-  background-image: url('../images/triangify.png');
+  opacity: .35;
+  background-position: 50%;
+  background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   inset: 0;
@@ -3164,7 +3168,7 @@ li {
 }
 
 .eco-card-desc {
-  color: #ffffffb3;
+  color: #1a1a1a;
   margin: 0;
   font-family: Manrope, sans-serif;
   font-size: 14px;
