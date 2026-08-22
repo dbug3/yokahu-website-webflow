@@ -228,6 +228,14 @@ li {
   background-color: var(--surface--page);
 }
 
+/* brand_shine_v35 injects "#work.section{padding-top:60vh!important}" for the
+   homepage lead-in. On subpages that space is not wanted. Two classes plus the
+   id out-specify the injected rule (120 vs 110), so source order does not
+   matter. */
+#work.section.work-compact {
+  padding-top: 0 !important;
+}
+
 .section.section-padding.service-section {
   --surface--black: #f0f2f4;
   --text--primary: #e6e8eb;
