@@ -2150,6 +2150,22 @@ li {
   padding: 20px;
   display: flex;
   position: relative;
+  isolation: isolate;
+}
+
+/* Per-card background: set background-image inline on .process-card-bg in the
+   HTML, e.g. style="background-image: url('images/abstract-green.webp')".
+   Paths in the style attribute are relative to the page, not this stylesheet.
+   z-index:-1 keeps it above the card's own fill but below brand_shine_v35's
+   :before hover glow (z-index 0) and the card content (z-index 2). */
+.process-card-bg {
+  z-index: -1;
+  opacity: .35;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
 }
 
 .process-card.center, .process-card.side {
