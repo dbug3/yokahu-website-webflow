@@ -1655,12 +1655,14 @@ li {
 }
 
 .the-width-400vh-scrollable-div {
+  z-index: 1;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   justify-content: flex-start;
   align-items: center;
   width: auto;
   display: flex;
+  position: relative;
 }
 
 .the-overflow-hidden-mask {
@@ -1671,14 +1673,22 @@ li {
   overflow: hidden;
 }
 
+/* "Our Work" watermark. Lives inside .the-overflow-hidden-mask so it is
+   anchored to the card strip rather than to the 100vh sticky container —
+   pinning it to the viewport bottom left it hanging below the cards.
+   Centred rather than bottom-aligned because the strip is as tall as the
+   494px CTA card while the project cards are 426px, so bottom:0 would still
+   overhang. The strip sits above it, revealing it as the cards scroll away. */
 .text-block {
-  color: #ffffff14;
+  z-index: 0;
+  color: #302d2d14;
   white-space: nowrap;
   font-size: 320px;
   line-height: 120%;
   position: absolute;
-  top: auto;
-  bottom: 0;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
 }
 
 .title-hero-wrap {
